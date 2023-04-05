@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.28.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UserManager.Core\Acti.Core.csproj" />
+    <ProjectReference Include="..\UserManager.Domain\Acti.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
