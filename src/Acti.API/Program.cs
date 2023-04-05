@@ -1,3 +1,4 @@
+using System.Text;
 using Acti.API.ViewModels;
 using Acti.Application.Dtos;
 using Acti.Application.Interfaces;
@@ -11,7 +12,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 

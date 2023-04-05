@@ -16,11 +16,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <ProjectReference Include="..\UserManager.Infra\Acti.Infra.csproj" />
-    <ProjectReference Include="..\UserManager.Application\Acti.Application.csproj" />
-    <ProjectReference Include="..\UserManager.Core\Acti.Core.csproj" />
-    <ProjectReference Include="..\UserManager.Domain\Acti.Domain.csproj" />
-    <ProjectReference Include="..\UserManager.Infra\UserManager.Infra.csproj" />
-  </ItemGroup>
-
+	  <ProjectReference Include="..\Acti.Application\Acti.Application.csproj" />
+	  <ProjectReference Include="..\Acti.Core\Acti.Core.csproj" />
+	  <ProjectReference Include="..\Acti.Domain\Acti.Domain.csproj" />
+	  <ProjectReference Include="..\Acti.Infra\Acti.Infra.csproj" />
+	</ItemGroup>
 </Project>

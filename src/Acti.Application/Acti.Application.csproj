@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UserManager.Core\Acti.Core.csproj" />
-    <ProjectReference Include="..\UserManager.Domain\Acti.Domain.csproj" />
+    <ProjectReference Include="..\Acti.Core\Acti.Core.csproj" />
+    <ProjectReference Include="..\Acti.Domain\Acti.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -20,5 +20,5 @@ public class CreateUserViewModel
     [MaxLength(180)]
     public string Password { get; set; }
 
-    [MinLength(8)][MaxLength(180)] public string? Avatar { get; set; }
+    [MinLength(8)] [MaxLength(180)] public string? Avatar { get; set; }
 }

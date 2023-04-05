@@ -1,4 +1,7 @@
-﻿using Acti.Application.Dtos;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Acti.Application.Dtos;
 using Acti.Application.Interfaces;
 using Acti.Core.Exceptions;
 using Acti.Domain.Entities;
@@ -7,9 +10,6 @@ using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace Acti.Application.Services;
 

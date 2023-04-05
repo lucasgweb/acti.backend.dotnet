@@ -5,15 +5,15 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F954B23-BA82-4F3F-8FBF-453E28124D47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.API", "UserManager\UserManager.API\Acti.API.csproj", "{6BA40A11-6754-43B0-A1B3-909E4B96E979}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.API", "src\Acti.API\Acti.API.csproj", "{6BA40A11-6754-43B0-A1B3-909E4B96E979}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.Domain", "UserManager\UserManager.Domain\Acti.Domain.csproj", "{1409F5A8-4E68-4580-8819-02B9843196EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.Domain", "src\Acti.Domain\Acti.Domain.csproj", "{1409F5A8-4E68-4580-8819-02B9843196EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.Infra", "UserManager\UserManager.Infra\Acti.Infra.csproj", "{A9908EA0-61B9-4F53-BDE1-2CF0335BD0A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.Infra", "src\Acti.Infra\Acti.Infra.csproj", "{A9908EA0-61B9-4F53-BDE1-2CF0335BD0A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.Core", "UserManager\UserManager.Core\Acti.Core.csproj", "{FEE85980-76B5-4A69-8EA3-CAE8A566CA8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.Core", "src\Acti.Core\Acti.Core.csproj", "{FEE85980-76B5-4A69-8EA3-CAE8A566CA8C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.Application", "UserManager\UserManager.Application\Acti.Application.csproj", "{9054F757-C00B-4F9E-880D-D0FA605A9AF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acti.Application", "src\Acti.Application\Acti.Application.csproj", "{9054F757-C00B-4F9E-880D-D0FA605A9AF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
