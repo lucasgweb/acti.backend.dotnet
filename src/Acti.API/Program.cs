@@ -24,6 +24,7 @@ builder.Services.AddAutoMapper(config =>
 {
     config.CreateMap<CreateUserViewModel, UserDTO>().ReverseMap();
     config.CreateMap<User, UserDTO>().ReverseMap();
+    config.CreateMap<UpdateUserViewModel, UserDTO>().ReverseMap();
 }, typeof(Program));
 
 #endregion

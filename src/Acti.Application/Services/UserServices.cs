@@ -67,10 +67,16 @@ public class UserServices : IUserServices
         var userExists = await _userRepository.Get(userDTO.Id);
 
         if (userExists != null)
-            throw new ApiException("There is already a user registered with the provided email.", 409);
-        var user = _mapper.Map<User>(userDTO);
-        var userCreated = await _userRepository.Add(user);
+        {
 
-        return _mapper.Map<UserDTO>(userCreated);
+            var user = _mapper.Map<User>(userDTO);
+            var userCreated = await _userRepository.Update(user);
+
+            return _mapper.Map<UserDTO>(userCreated);
+        }
+        else
+        {
+            throw new ApiException("Nenhum usuario encontrado.", 409);
+        }
     }
 }
