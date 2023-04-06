@@ -39,7 +39,7 @@ public class UserController : ControllerBase
         }
         catch (ApiException ex)
         {
-            return BadRequest(new ResultViewModel()
+            return BadRequest(new ResultViewModel
             {
                 Message = ex.Message,
                 Success = false

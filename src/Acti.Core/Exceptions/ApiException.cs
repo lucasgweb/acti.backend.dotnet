@@ -2,9 +2,6 @@
 
 public class ApiException : Exception
 {
-    public string Message { get; set; }
-    public int StatusCode { get; set; }
-
     public ApiException(string message, int statusCode)
     {
         Message = message;
@@ -15,4 +12,7 @@ public class ApiException : Exception
     {
         Message = message;
     }
+
+    public string Message { get; set; }
+    public int StatusCode { get; set; }
 }

@@ -40,6 +40,7 @@ public class UserMap : IEntityTypeConfiguration<User>
             .HasColumnType("VARCHAR(180)");
 
         builder.Property(t => t.ResetToken)
+            .IsRequired(false)
             .HasMaxLength(180)
             .HasColumnName("resetToken")
             .HasColumnType("VARCHAR(180)");

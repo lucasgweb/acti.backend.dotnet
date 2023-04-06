@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace UserManager.Infra.Migrations
+namespace Acti.Infra.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -58,7 +58,6 @@ namespace UserManager.Infra.Migrations
                         .HasColumnName("password");
 
                     b.Property<string>("ResetToken")
-                        .IsRequired()
                         .HasMaxLength(180)
                         .HasColumnType("VARCHAR(180)")
                         .HasColumnName("resetToken");

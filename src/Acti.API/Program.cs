@@ -1,3 +1,5 @@
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using Acti.API.ViewModels;
 using Acti.Application.Dtos;
@@ -6,16 +8,13 @@ using Acti.Application.Services;
 using Acti.Domain.Entities;
 using Acti.Domain.Repositories;
 using Acti.Infra.Context;
+using Acti.Infra.Email;
 using Acti.Infra.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Net.Mail;
-using System.Configuration;
-using System.Net;
-using Acti.Infra.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,11 +64,11 @@ builder.Services.AddAuthentication(x =>
 });
 
 #endregion
+
 var emailSettings = builder.Configuration.GetSection("EmailSettings");
 
 builder.Services.AddSingleton<SmtpClient>(s =>
 {
-
     var smtpClient = new SmtpClient(emailSettings["Server"], int.Parse(emailSettings["Port"]));
     smtpClient.UseDefaultCredentials = false;
     smtpClient.Credentials = new NetworkCredential(emailSettings["Username"], emailSettings["Password"]);

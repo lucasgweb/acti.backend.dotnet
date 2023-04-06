@@ -26,7 +26,7 @@ public class UserServices : IUserServices
         var userExists = await _userRepository.GetByEmail(userDTO.Email);
 
         if (userExists != null)
-            throw new ApiException( "The email provided is already registered with an existing user.",409);
+            throw new ApiException("The email provided is already registered with an existing user.", 409);
         var user = _mapper.Map<User>(userDTO);
 
         user.Password = _passwordHasher.HashPassword(user, userDTO.Password);
@@ -66,7 +66,8 @@ public class UserServices : IUserServices
     {
         var userExists = await _userRepository.Get(userDTO.Id);
 
-        if (userExists != null) throw new ApiException("There is already a user registered with the provided email.", 409);
+        if (userExists != null)
+            throw new ApiException("There is already a user registered with the provided email.", 409);
         var user = _mapper.Map<User>(userDTO);
         var userCreated = await _userRepository.Add(user);
 

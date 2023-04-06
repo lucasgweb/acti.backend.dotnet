@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace UserManager.Infra.Migrations
+namespace Acti.Infra.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230404225651_Initial")]
+    [Migration("20230406004926_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace UserManager.Infra.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("UserManager.Domain.Entities.User", b =>
+            modelBuilder.Entity("Acti.Domain.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,6 +59,11 @@ namespace UserManager.Infra.Migrations
                         .HasMaxLength(280)
                         .HasColumnType("VARCHAR(280)")
                         .HasColumnName("password");
+
+                    b.Property<string>("ResetToken")
+                        .HasMaxLength(180)
+                        .HasColumnType("VARCHAR(180)")
+                        .HasColumnName("resetToken");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");

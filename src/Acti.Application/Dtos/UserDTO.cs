@@ -7,7 +7,7 @@ public class UserDTO
     }
 
     public UserDTO(int id, string name, string email, string password, string avatar, DateTime createdAt,
-        DateTime updatedAt)
+        DateTime updatedAt, string resetToken)
     {
         Id = id;
         Name = name;
@@ -16,6 +16,7 @@ public class UserDTO
         Avatar = avatar;
         CreatedAt = createdAt;
         UpdatedAt = updatedAt;
+        ResetToken = resetToken;
     }
 
     public int Id { get; set; }
@@ -23,6 +24,7 @@ public class UserDTO
     public string Email { get; set; }
     public string Avatar { get; set; }
     public string Password { get; set; }
+    public string ResetToken { get; set; }
     public DateTime? CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 }

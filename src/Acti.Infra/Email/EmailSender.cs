@@ -1,37 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Mail;
 
-namespace Acti.Infra.Email
+namespace Acti.Infra.Email;
+
+public class EmailSender : IEmailSender
 {
-    public class EmailSender: IEmailSender
+    private readonly SmtpClient _smtpClient;
+
+    public EmailSender(SmtpClient smtpClient)
     {
-        private readonly SmtpClient _smtpClient;
+        _smtpClient = smtpClient;
+    }
 
-        public EmailSender(SmtpClient smtpClient)
+    public async Task SendEmailAsync(string to, string subject, string body)
+    {
+        try
         {
-            _smtpClient = smtpClient;
+            var message = new MailMessage("contato@lucasweb.me", to, subject, body)
+            {
+                IsBodyHtml = true
+            };
+            await _smtpClient.SendMailAsync(message);
         }
-
-        public async Task SendEmailAsync(string to, string subject, string body)
+        catch (Exception e)
         {
-            try
-            {
-                var message = new MailMessage("contato@lucasweb.me", to, subject, body)
-                {
-                    IsBodyHtml = true
-                };
-                await _smtpClient.SendMailAsync(message);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-            
+            Console.WriteLine(e);
+            throw;
         }
     }
 }

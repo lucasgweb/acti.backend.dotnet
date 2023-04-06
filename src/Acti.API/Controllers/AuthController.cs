@@ -1,10 +1,8 @@
-﻿using Acti.API.Utils;
-using Acti.API.ViewModels;
+﻿using Acti.API.ViewModels;
 using Acti.API.ViewModels.Auth;
 using Acti.Application.Interfaces;
 using Acti.Core.Exceptions;
 using AutoMapper;
-using Azure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Acti.API.Controllers;
@@ -42,7 +40,7 @@ public class AuthController : ControllerBase
         }
         catch (ApiException ex)
         {
-            return BadRequest(new ResultViewModel()
+            return BadRequest(new ResultViewModel
             {
                 Message = ex.Message,
                 Success = false
@@ -67,7 +65,7 @@ public class AuthController : ControllerBase
         }
         catch (ApiException ex)
         {
-            return BadRequest(new ResultViewModel()
+            return BadRequest(new ResultViewModel
             {
                 Message = ex.Message,
                 Success = false
@@ -91,7 +89,7 @@ public class AuthController : ControllerBase
         }
         catch (ApiException ex)
         {
-            return BadRequest(new ResultViewModel()
+            return BadRequest(new ResultViewModel
             {
                 Message = ex.Message,
                 Success = false

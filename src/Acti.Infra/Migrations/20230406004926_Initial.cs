@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace UserManager.Infra.Migrations
+namespace Acti.Infra.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
@@ -20,6 +21,7 @@ namespace UserManager.Infra.Migrations
                     email = table.Column<string>(type: "VARCHAR(180)", maxLength: 180, nullable: false),
                     password = table.Column<string>(type: "VARCHAR(280)", maxLength: 280, nullable: false),
                     avatar = table.Column<string>(type: "VARCHAR(180)", maxLength: 180, nullable: false),
+                    resetToken = table.Column<string>(type: "VARCHAR(180)", maxLength: 180, nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
