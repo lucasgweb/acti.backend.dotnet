@@ -38,5 +38,10 @@ public class UserMap : IEntityTypeConfiguration<User>
             .HasMaxLength(180)
             .HasColumnName("avatar")
             .HasColumnType("VARCHAR(180)");
+
+        builder.Property(t => t.ResetToken)
+            .HasMaxLength(180)
+            .HasColumnName("resetToken")
+            .HasColumnType("VARCHAR(180)");
     }
 }

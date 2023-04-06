@@ -37,9 +37,13 @@ public class UserController : ControllerBase
                 Data = userCreated
             });
         }
-        catch (AppException ex)
+        catch (ApiException ex)
         {
-            return BadRequest(ex.Message);
+            return BadRequest(new ResultViewModel()
+            {
+                Message = ex.Message,
+                Success = false
+            });
         }
         catch (Exception ex)
         {

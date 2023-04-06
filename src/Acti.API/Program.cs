@@ -12,6 +12,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Net.Mail;
+using System.Configuration;
+using System.Net;
+using Acti.Infra.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,6 +65,19 @@ builder.Services.AddAuthentication(x =>
 });
 
 #endregion
+var emailSettings = builder.Configuration.GetSection("EmailSettings");
+
+builder.Services.AddSingleton<SmtpClient>(s =>
+{
+
+    var smtpClient = new SmtpClient(emailSettings["Server"], int.Parse(emailSettings["Port"]));
+    smtpClient.UseDefaultCredentials = false;
+    smtpClient.Credentials = new NetworkCredential(emailSettings["Username"], emailSettings["Password"]);
+    smtpClient.EnableSsl = bool.Parse(emailSettings["UseSSL"]);
+    return smtpClient;
+});
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
